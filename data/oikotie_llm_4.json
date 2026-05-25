@@ -1,0 +1,296 @@
+{
+  "24366585": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24456043": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24381150": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24453699": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24453693": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24453374": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24453236": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24453046": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": true,
+    "ev_evidence": "Autopaikkoja vuokrattavissa varaustilanteen mukaan autokatoksesta, jossa osalla paikoista myös valmius sähköauton lataukseen."
+  },
+  "24451990": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24451963": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24451954": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24451690": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24450648": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24413024": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24450553": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24450011": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24449778": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24449357": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24314218": {
+    "has_parking_garage": true,
+    "parking_evidence": "Talon pysäköintipaikat ovat pysäköintihallissa talon alla.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24449048": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24449047": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24448328": {
+    "has_parking_garage": true,
+    "parking_evidence": "Yhtiössä myös autohalli, jonne kulku suoraan hissillä.",
+    "has_ev_charging": true,
+    "ev_evidence": "Autohallissa on kaksi sähköauton latauspaikkaa."
+  },
+  "24447988": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24447220": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24446736": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24446558": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24443626": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24314751": {
+    "has_parking_garage": true,
+    "parking_evidence": "Autopaikkoja on vuokrattavissa erikseen, sekä hallista että pihalta.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24443523": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24442988": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24442393": {
+    "has_parking_garage": true,
+    "parking_evidence": "Asukkaat voivat vuokrata pysäköintioikeuden pysäköintihallista, jossa osassa paikoista lämpötolpat.",
+    "has_ev_charging": true,
+    "ev_evidence": "Hallissa myös muutama sähköauton latauspaikka vuokrattavaksi."
+  },
+  "24440789": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "23590757": {
+    "has_parking_garage": true,
+    "parking_evidence": "Mikäli liikut autolla, voit tiedustella vapaata paikkaa talonyhtiön autohallista.",
+    "has_ev_charging": true,
+    "ev_evidence": "Autohallissa on kaksi sähköauton latauspaikkaa."
+  },
+  "24437776": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24437775": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24437072": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24436987": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24436911": {
+    "has_parking_garage": true,
+    "parking_evidence": "Autohallipaikkoja voi varata erikseen, ja alueella sijaitsee myös Finnoon pysäköintirakennus, josta voi vuokrata paikkoja tarpeen mukaan.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24436832": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24434624": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24022999": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24162557": {
+    "has_parking_garage": true,
+    "parking_evidence": "Talosta on suora pääsy parkkihallin kautta kauppakeskus Lippulaivan palveluiden ääreen, joten sijainti on erinomainen.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24433411": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24433033": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24432798": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24432636": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24432136": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24431377": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24431050": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  }
+}

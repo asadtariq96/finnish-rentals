@@ -1,0 +1,242 @@
+[
+  {
+    "cardId": "24502080",
+    "price": "1 045 € / kk",
+    "size": "69 m²",
+    "district": "Mankkaa",
+    "address": "Gerkinkartano 2",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/24502080",
+    "parking_evidence": "Autopaikat sijaitsevat pihakannen alla kylmässä pysäköintilaitoksessa.",
+    "ev_evidence": "Autopaikat pihakannen alla, osa varustettu sähköauton latauspisteillä."
+  },
+  {
+    "cardId": "24491537",
+    "price": "1 150 € / kk",
+    "size": "72,5 m²",
+    "district": "Leppävaara",
+    "address": "Leppävaarankatu 17 B",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/24491537",
+    "parking_evidence": "Pysäköintimahdollisuus lähistöllä sijaitsevassa parkkitalossa.",
+    "ev_evidence": "Autopaikkoja on muutamia vapaana tällä hetkellä ja autopaikalle on mahdollisuus saada tilattua latauslaite."
+  },
+  {
+    "cardId": "24500709",
+    "price": "1 169 € / kk",
+    "size": "60 m²",
+    "district": "Perkkaa",
+    "address": "Majurinkatu 15 A",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/24500709",
+    "parking_evidence": "Parkkitalossa autopaikka 50 €/kk, sähköauton latauspaikka 70 €/kk.",
+    "ev_evidence": "Parkkitalossa autopaikka 50 €/kk, sähköauton latauspaikka 70 €/kk."
+  },
+  {
+    "cardId": "23590757",
+    "price": "1 173 € / kk",
+    "size": "64 m²",
+    "district": "Suurpelto",
+    "address": "Suurpellon puistokatu 4 A",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/23590757",
+    "parking_evidence": "Mikäli liikut autolla, voit tiedustella vapaata paikkaa talonyhtiön autohallista.",
+    "ev_evidence": "Autohallissa on kaksi sähköauton latauspaikkaa."
+  },
+  {
+    "cardId": "24500383",
+    "price": "1 211 € / kk",
+    "size": "74 m²",
+    "district": "Kilo",
+    "address": "Nihtisillankuja 2",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/24500383",
+    "parking_evidence": "Autoilijoille löytyy yhteensä 38 pysäköintipaikkaa, jotka sijaitsevat parkkihallissa.",
+    "ev_evidence": "Pysäköintipaikoista kuusi soveltuu sähköauton lataukseen."
+  },
+  {
+    "cardId": "24295705",
+    "price": "1 224 € / kk",
+    "size": "70 m²",
+    "district": "Suurpelto",
+    "address": "Suurpellon puistokatu 4 C",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/24295705",
+    "parking_evidence": "Mikäli liikut autolla, voit tiedustella vapaata paikkaa talonyhtiön autohallista.",
+    "ev_evidence": "Autohallissa on kaksi sähköauton latauspaikkaa."
+  },
+  {
+    "cardId": "24291969",
+    "price": "1 225 € / kk",
+    "size": "68,5 m²",
+    "district": "Suurpelto",
+    "address": "Suurpellon puistokatu 4 A",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/24291969",
+    "parking_evidence": "Mikäli liikut autolla, voit tiedustella vapaata paikkaa talonyhtiön autohallista.",
+    "ev_evidence": "Autohallissa on kaksi sähköauton latauspaikkaa."
+  },
+  {
+    "cardId": "24442393",
+    "price": "1 235 € / kk",
+    "size": "62 m²",
+    "district": "Friisilä",
+    "address": "Piispantilankuja 1",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/24442393",
+    "parking_evidence": "Asukkaat voivat vuokrata pysäköintioikeuden pysäköintihallista, jossa osassa paikoista lämpötolpat.",
+    "ev_evidence": "Hallissa myös muutama sähköauton latauspaikka vuokrattavaksi."
+  },
+  {
+    "cardId": "24485673",
+    "price": "1 239 € / kk",
+    "size": "68,5 m²",
+    "district": "Karakallio",
+    "address": "Karakalliontie 8 D",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/24485673",
+    "parking_evidence": "Omalla autolla liikkuville autopaikoitus on pysäköintilaitoksessa samassa pihapiirissä.",
+    "ev_evidence": "11 Kw latauksella olevat 80 €, 3,6 kW paikat 70 €, ilman tolppaa olevat 60 €/kk."
+  },
+  {
+    "cardId": "23656480",
+    "price": "1 244 € / kk",
+    "size": "70 m²",
+    "district": "Suurpelto",
+    "address": "Suurpellon puistokatu 4 C",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/23656480",
+    "parking_evidence": "Mikäli liikut autolla, voit tiedustella vapaata paikkaa talonyhtiön autohallista.",
+    "ev_evidence": "Autohallissa on kaksi sähköauton latauspaikkaa."
+  },
+  {
+    "cardId": "24502793",
+    "price": "1 249 € / kk",
+    "size": "62,5 m²",
+    "district": "Leppävaara",
+    "address": "Runoratsunkatu 15 A",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/24502793",
+    "parking_evidence": "Vuokrasopimus sisältää yhden ilmaisen hallipaikan autolle Runoratsun Pysäköintihallista Anna Sahlsteninkatu 11 (arvo 75 € sis. alv/kk) kuuden (6) kuukauden ajalle, kun vuokrasopimus on tehty 22.1.-30.6.2026.",
+    "ev_evidence": "Lisäksi sähköauton latauksesta hallissa maksetaan normaali 10 €/kk suuruinen maksu sekä asukkaan käyttämä lataussähkö, molemmat myös ensimmäisten kuuden kuukauden osalta."
+  },
+  {
+    "cardId": "22933476",
+    "price": "1 249 € / kk",
+    "size": "68,5 m²",
+    "district": "Karakallio",
+    "address": "Karakalliontie 8 D",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/22933476",
+    "parking_evidence": "Omalla autolla liikkuville autopaikoitus on pysäköintilaitoksessa samassa pihapiirissä.",
+    "ev_evidence": "11 Kw latauksella olevat 80 €, 3,6 kW paikat 70 €, ilman tolppaa olevat 60 €/kk."
+  },
+  {
+    "cardId": "24284170",
+    "price": "1 250 € / kk",
+    "size": "71 m²",
+    "district": "Kilo",
+    "address": "NIHTITORPANKUJA 7 A",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/24284170",
+    "parking_evidence": "Yhtiössä myös autohalli, jonne kulku suoraan hissillä.",
+    "ev_evidence": "Autohallissa on kaksi sähköauton latauspaikkaa."
+  },
+  {
+    "cardId": "24390840",
+    "price": "1 250 € / kk",
+    "size": "67,5 m²",
+    "district": "Finnoo",
+    "address": "Finnoonkartanonkatu 11 A",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/24390840",
+    "parking_evidence": "Autoileville asukkaille on erikseen vuokrattavissa autohallipaikkoja korttelin yhteisestä pysäköintilaitoksesta.",
+    "ev_evidence": "Autopaikoilla on valmiudet sähköauton lataukselle."
+  },
+  {
+    "cardId": "24355312",
+    "price": "1 251 € / kk",
+    "size": "67,5 m²",
+    "district": "Finnoo",
+    "address": "Finnoonkartanonkatu 11 A",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/24355312",
+    "parking_evidence": "Autoileville asukkaille on erikseen vuokrattavissa autohallipaikkoja korttelin yhteisestä pysäköintilaitoksesta.",
+    "ev_evidence": "Autopaikoilla on valmiudet sähköauton lataukselle."
+  },
+  {
+    "cardId": "23828886",
+    "price": "1 269 € / kk",
+    "size": "67 m²",
+    "district": "Niittykumpu",
+    "address": "Niittykummuntie 12 D",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/23828886",
+    "parking_evidence": "Omalla autolla liikkuville löytyy autopaikkoja pihapaikkoina sekä autohallipaikkoina, joista osa on varustettu sähköauton latausasemalla.",
+    "ev_evidence": "Omalla autolla liikkuville löytyy autopaikkoja pihapaikkoina sekä autohallipaikkoina, joista osa on varustettu sähköauton latausasemalla."
+  },
+  {
+    "cardId": "24460722",
+    "price": "1 270 € / kk",
+    "size": "65,5 m²",
+    "district": "Finnoo",
+    "address": "Luoteisrinne 7",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/24460722",
+    "parking_evidence": "Autopaikat sijoittuvat kohteen omaan pysäköintihalliin, jossa osa autopaikoista on varustettu sähköautojen latauspisteillä.",
+    "ev_evidence": "Autopaikat sijoittuvat kohteen omaan pysäköintihalliin, jossa osa autopaikoista on varustettu sähköautojen latauspisteillä."
+  },
+  {
+    "cardId": "24400900",
+    "price": "1 275 € / kk",
+    "size": "66 m²",
+    "district": "Friisilä",
+    "address": "Piispantilankuja 1",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/24400900",
+    "parking_evidence": "Asukkaat voivat vuokrata pysäköintioikeuden pysäköintihallista, jossa osassa paikoista lämpötolpat.",
+    "ev_evidence": "Hallissa myös muutama sähköauton latauspaikka vuokrattavaksi."
+  },
+  {
+    "cardId": "24496605",
+    "price": "1 279 € / kk",
+    "size": "65 m²",
+    "district": "Niittykumpu",
+    "address": "Niittykummuntie 12 C",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/24496605",
+    "parking_evidence": "Omalla autolla liikkuville löytyy autopaikkoja pihapaikkoina sekä autohallipaikkoina, joista osa on varustettu sähköauton latausasemalla.",
+    "ev_evidence": "Omalla autolla liikkuville löytyy autopaikkoja pihapaikkoina sekä autohallipaikkoina, joista osa on varustettu sähköauton latausasemalla."
+  },
+  {
+    "cardId": "24319941",
+    "price": "1 280 € / kk",
+    "size": "72 m²",
+    "district": "Kivenlahti",
+    "address": "Marinkallio 10 A",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/24319941",
+    "parking_evidence": "Yhtiön autopaikat sijaitsevat erillisessä, osin maanalaisessa pysäköintirakennuksessa.",
+    "ev_evidence": "Vuokrattavissa myös sähköautonlatauspaikka."
+  },
+  {
+    "cardId": "24485672",
+    "price": "1 289 € / kk",
+    "size": "68,5 m²",
+    "district": "Karakallio",
+    "address": "Karakalliontie 8 C",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/24485672",
+    "parking_evidence": "Omalla autolla liikkuville autopaikoitus on pysäköintilaitoksessa samassa pihapiirissä.",
+    "ev_evidence": "11 Kw latauksella olevat 80 €, 3,6 kW paikat 70 €, ilman tolppaa olevat 60 €/kk."
+  },
+  {
+    "cardId": "24495603",
+    "price": "1 290 € / kk",
+    "size": "72 m²",
+    "district": "Kivenlahti",
+    "address": "Marinkallio 10 A",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/24495603",
+    "parking_evidence": "Autopaikkoja vuokrattavissa erikseen yhtiön pysäköintihallista.",
+    "ev_evidence": "Vuokrattavissa myös sähköautonlatauspaikka."
+  },
+  {
+    "cardId": "24448328",
+    "price": "1 326 € / kk",
+    "size": "71 m²",
+    "district": "Kilo",
+    "address": "NIHTITORPANKUJA 7 B",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/24448328",
+    "parking_evidence": "Yhtiössä myös autohalli, jonne kulku suoraan hissillä.",
+    "ev_evidence": "Autohallissa on kaksi sähköauton latauspaikkaa."
+  },
+  {
+    "cardId": "24502649",
+    "price": "1 350 € / kk",
+    "size": "72 m²",
+    "district": "Finnoo",
+    "address": "Finnoonsilta 19",
+    "url": "https://asunnot.oikotie.fi/vuokra-asunnot/espoo/24502649",
+    "parking_evidence": "Asunnon vuokrahintaan sisältyy autohallipaikka, jossa auton sähkölatausmahdollisuus.",
+    "ev_evidence": "Asunnon vuokrahintaan sisältyy autohallipaikka, jossa auton sähkölatausmahdollisuus."
+  }
+]

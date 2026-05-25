@@ -1,0 +1,122 @@
+{
+  "eh8679": {
+    "has_parking_garage": true,
+    "parking_evidence": "Omalla autolla liikkuvilla on mahdollisuus vuokrata autohallipaikka kohteesta.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "ef9884": {
+    "has_parking_garage": true,
+    "parking_evidence": "Autoileville asukkaille on erikseen vuokrattavissa autohallipaikkoja korttelin yhteisestä pysäköintilaitoksesta.",
+    "has_ev_charging": true,
+    "ev_evidence": "Autopaikoilla on valmiudet sähköauton lataukselle."
+  },
+  "ea2686": {
+    "has_parking_garage": true,
+    "parking_evidence": "Yhtiön autopaikat sijaitsevat erillisessä, osin maanalaisessa pysäköintirakennuksessa.",
+    "has_ev_charging": true,
+    "ev_evidence": "Vuokrattavissa myös sähköautonlatauspaikka."
+  },
+  "ea2348": {
+    "has_parking_garage": true,
+    "parking_evidence": "Pysäköintipaikat sijaitsevat viereisessä parkkihallissa.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "dz6762": {
+    "has_parking_garage": true,
+    "parking_evidence": "Talon pysäköintipaikat ovat pysäköintihallissa talon alla.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "dy6636": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "dx8288": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "dv9293": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "dv2842": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": true,
+    "ev_evidence": "Kiinteistöllä on 36 autopaikkaa, joista 4 sähköauton latausmahdollisuudella, 2 invapaikkaa."
+  },
+  "dv2822": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": true,
+    "ev_evidence": "Kiinteistöllä on 36 autopaikkaa, joista 4 sähköauton latausmahdollisuudella, 2 invapaikkaa."
+  },
+  "dv2778": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": true,
+    "ev_evidence": "Kiinteistöllä on 36 autopaikkaa, joista 4 sähköauton latausmahdollisuudella, 2 invapaikkaa."
+  },
+  "dt3462": {
+    "has_parking_garage": true,
+    "parking_evidence": "Omalla autolla liikkuville autopaikoitus on pysäköintilaitoksessa samassa pihapiirissä.",
+    "has_ev_charging": true,
+    "ev_evidence": "11 Kw latauksella olevat 80 €, 3,6 kW paikat 70 €, ilman tolppaa olevat 60 €/kk."
+  },
+  "ds3496": {
+    "has_parking_garage": true,
+    "parking_evidence": "Autohallipaikkoja vuokrattavissa erikseen.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "dp9727": {
+    "has_parking_garage": true,
+    "parking_evidence": "Talosta on suora pääsy parkkihallin kautta kauppakeskus Lippulaivan palveluiden ääreen, joten sijainti on erinomainen.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "cx2937": {
+    "has_parking_garage": true,
+    "parking_evidence": "Omalla autolla liikkuville löytyy autopaikkoja pihapaikkoina sekä autohallipaikkoina, joista osa on varustettu sähköauton latausasemalla.",
+    "has_ev_charging": true,
+    "ev_evidence": "Omalla autolla liikkuville löytyy autopaikkoja pihapaikkoina sekä autohallipaikkoina, joista osa on varustettu sähköauton latausasemalla."
+  },
+  "cv4737": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "ce6727": {
+    "has_parking_garage": true,
+    "parking_evidence": "Autopaikkoja on saatavilla kannenalaisessa pysäköintihallissa ja erillisessä pysäköintitalossa.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "be2989": {
+    "has_parking_garage": true,
+    "parking_evidence": "Pysäköintipaikat sijaitsevat viereisessä parkkihallissa.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "z94496": {
+    "has_parking_garage": true,
+    "parking_evidence": "Autopaikat sijoittuvat kohteen omaan pysäköintihalliin, jossa osa autopaikoista on varustettu sähköautojen latauspisteillä.",
+    "has_ev_charging": true,
+    "ev_evidence": "Autopaikat sijoittuvat kohteen omaan pysäköintihalliin, jossa osa autopaikoista on varustettu sähköautojen latauspisteillä."
+  },
+  "ay8637": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": true,
+    "ev_evidence": "Mahdollisuus omalle parkkipaikalle - myös sähköauton latauspiste."
+  }
+}

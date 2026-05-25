@@ -1,0 +1,296 @@
+{
+  "24476981": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24476509": {
+    "has_parking_garage": true,
+    "parking_evidence": "Omalla autolla liikkuvilla on mahdollisuus vuokrata autohallipaikka kohteesta.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24476228": {
+    "has_parking_garage": true,
+    "parking_evidence": "Autohallipaikka vuokrattavissa 80 €/kk.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24476229": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24476205": {
+    "has_parking_garage": true,
+    "parking_evidence": "Vuokrattavat autopaikat sijaitsevat kätevästi autohallissa.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24476201": {
+    "has_parking_garage": true,
+    "parking_evidence": "Omalla autolla liikkuville pysäköinti alueella on mahdollista sekä Puustellinhuipun pihakannen alaisessa hallissa 75 €/kk, että alueen itälaidalla sijaitsevassa pysäköintilaitoksessa 60 €/kk.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24476070": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24476068": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24475733": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24475229": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24474071": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24474009": {
+    "has_parking_garage": true,
+    "parking_evidence": "Erikseen vuokrattavissa rajallinen määrä pistokkeellisia autohallipaikkoja (50 €/kk).",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24472783": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24472233": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24472172": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24471631": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24468799": {
+    "has_parking_garage": true,
+    "parking_evidence": "Gräsantörmä 1 C-D:n asukkaiden käyttöön on varattu 51 parkkipaikkaa, joista 47 sijaitsevat kohteen autohallissa ja 4 kohteen pihalla.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24467462": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24467309": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24466963": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24466852": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24466552": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24466411": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24466093": {
+    "has_parking_garage": true,
+    "parking_evidence": "Suljettua autotallia voi vuokrata (75€/kk).",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24465688": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24465562": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24464759": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24464342": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24464041": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24463076": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24463063": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24462713": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24462527": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24462492": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24461521": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24461522": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24461516": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24460722": {
+    "has_parking_garage": true,
+    "parking_evidence": "Autopaikat sijoittuvat kohteen omaan pysäköintihalliin, jossa osa autopaikoista on varustettu sähköautojen latauspisteillä.",
+    "has_ev_charging": true,
+    "ev_evidence": "Autopaikat sijoittuvat kohteen omaan pysäköintihalliin, jossa osa autopaikoista on varustettu sähköautojen latauspisteillä."
+  },
+  "24460003": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24459374": {
+    "has_parking_garage": true,
+    "parking_evidence": "Yhtiössä autohalli, jonne kulku suoraan hissillä.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24459180": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24458792": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24458741": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24458218": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24457659": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24457615": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24456224": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "23656480": {
+    "has_parking_garage": true,
+    "parking_evidence": "Mikäli liikut autolla, voit tiedustella vapaata paikkaa talonyhtiön autohallista.",
+    "has_ev_charging": true,
+    "ev_evidence": "Autohallissa on kaksi sähköauton latauspaikkaa."
+  },
+  "24456204": {
+    "has_parking_garage": true,
+    "parking_evidence": "Autopaikkoja on vuokrattavissa erikseen talon alla sijaitsevasta autohallista.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  }
+}

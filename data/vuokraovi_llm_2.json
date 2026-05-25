@@ -1,0 +1,122 @@
+{
+  "en4239": {
+    "has_parking_garage": true,
+    "parking_evidence": "Erillisessä parkkihallissa on erikseen vuokrattavana autopaikkoja.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "eu8827": {
+    "has_parking_garage": true,
+    "parking_evidence": "Taloyhtiöllä on vuokrattavana autopaikkoja erillisestä pysäköintihallista (kysy saatavuus välittäjältä).",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "et7746": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": true,
+    "ev_evidence": "Autopaikkoja vuokrattavissa varaustilanteen mukaan autokatoksesta, jossa osalla paikoista myös valmius sähköauton lataukseen."
+  },
+  "es9938": {
+    "has_parking_garage": true,
+    "parking_evidence": "Autoilijoille löytyy yhteensä 24 pysäköintipaikkaa, jotka sijaitsevat lämpimässä autohallissa.",
+    "has_ev_charging": true,
+    "ev_evidence": "Autopaikoista 6 soveltuu sähköauton lataamiseen."
+  },
+  "es8676": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "es8648": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "er2427": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "dz6699": {
+    "has_parking_garage": true,
+    "parking_evidence": "Talon pysäköintipaikat ovat pysäköintihallissa talon alla.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "eq2632": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "ep9423": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "ep3324": {
+    "has_parking_garage": true,
+    "parking_evidence": "Autoileville asukkaille on erikseen vuokrattavissa autohallipaikkoja korttelin yhteisestä pysäköintilaitoksesta.",
+    "has_ev_charging": true,
+    "ev_evidence": "Autopaikoilla on valmiudet sähköauton lataukselle."
+  },
+  "ep3224": {
+    "has_parking_garage": true,
+    "parking_evidence": "Omalla autolla liikkuvilla on mahdollisuus vuokrata autohallipaikka kohteesta.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "ep2982": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "ep2668": {
+    "has_parking_garage": true,
+    "parking_evidence": "Pysäköintipaikat sijaitsevat viereisessä parkkihallissa.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "en3934": {
+    "has_parking_garage": true,
+    "parking_evidence": "Autohallipaikoitus korttelin autohallista tai pysäköintitalosta (erikseen vuokrattavissa varaustilanteen mukaan)",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "en3922": {
+    "has_parking_garage": true,
+    "parking_evidence": "Autohallipaikoitus korttelin autohallista tai pysäköintitalosta (erikseen vuokrattavissa varaustilanteen mukaan)",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "em9647": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "em7728": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "dz6724": {
+    "has_parking_garage": true,
+    "parking_evidence": "Talon pysäköintipaikat ovat pysäköintihallissa talon alla.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "ek7469": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  }
+}

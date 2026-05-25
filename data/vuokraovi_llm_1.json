@@ -1,0 +1,122 @@
+{
+  "ff2239": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "fe6733": {
+    "has_parking_garage": true,
+    "parking_evidence": "Pysäköintipaikat sijaitsevat viereisessä parkkihallissa.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "fe3467": {
+    "has_parking_garage": true,
+    "parking_evidence": "Autohallipaikka vuokrattavissa 80 €/kk.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "fe2837": {
+    "has_parking_garage": true,
+    "parking_evidence": "Omalla autolla liikkuvilla on mahdollisuus vuokrata autohallipaikka kohteesta.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "fe2328": {
+    "has_parking_garage": true,
+    "parking_evidence": "Vuokrattavat autopaikat sijaitsevat kätevästi autohallissa.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "fe2323": {
+    "has_parking_garage": true,
+    "parking_evidence": "Omalla autolla liikkuville pysäköinti alueella on mahdollista sekä Puustellinhuipun pihakannen alaisessa hallissa 75 €/kk, että alueen itälaidalla sijaitsevassa pysäköintilaitoksessa 60 €/kk.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "fe2299": {
+    "has_parking_garage": true,
+    "parking_evidence": "Omalla autolla liikkuvilla on mahdollisuus vuokrata autopaikka, taloyhtiön autopaikat sijaitsevat erillisessä pysäköintilaitoksessa.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "fd9444": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "fd6767": {
+    "has_parking_garage": true,
+    "parking_evidence": "Erikseen vuokrattavissa rajallinen määrä pistokkeellisia autohallipaikkoja (50 €/kk).",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "fd6276": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "fc9838": {
+    "has_parking_garage": true,
+    "parking_evidence": "Gräsantörmä 1 C-D:n asukkaiden käyttöön on varattu 51 parkkipaikkaa, joista 47 sijaitsevat kohteen autohallissa ja 4 kohteen pihalla.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "fc6347": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "fb8699": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "fb6744": {
+    "has_parking_garage": true,
+    "parking_evidence": "Talon pysäköintipaikat ovat pysäköintihallissa talon alla.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "fa9886": {
+    "has_parking_garage": true,
+    "parking_evidence": "Talon pysäköintipaikat ovat pysäköintihallissa talon alla.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "fa8473": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "ez7694": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": true,
+    "ev_evidence": "Autopaikkoja vuokrattavissa varaustilanteen mukaan autokatoksesta, jossa osalla paikoista myös valmius sähköauton lataukseen."
+  },
+  "ez6478": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "ex3328": {
+    "has_parking_garage": true,
+    "parking_evidence": "Autohallipaikkoja voi varata erikseen, ja alueella sijaitsee myös Finnoon pysäköintirakennus, josta voi vuokrata paikkoja tarpeen mukaan.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "ev8722": {
+    "has_parking_garage": true,
+    "parking_evidence": "Asukkaat voivat vuokrata pysäköintioikeuden pysäköintihallista, jossa osassa paikoista lämpötolpat.",
+    "has_ev_charging": true,
+    "ev_evidence": "Hallissa myös muutama sähköauton latauspaikka vuokrattavaksi."
+  }
+}

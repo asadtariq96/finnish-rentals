@@ -1,0 +1,296 @@
+{
+  "24510504": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24510309": {
+    "has_parking_garage": true,
+    "parking_evidence": "Autopaikkoja on vuokrattavissa erikseen, sekä hallista että pihalta.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24508817": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24508819": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24508503": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24476204": {
+    "has_parking_garage": true,
+    "parking_evidence": "Omalla autolla liikkuvilla on mahdollisuus vuokrata autopaikka, taloyhtiön autopaikat sijaitsevat erillisessä pysäköintilaitoksessa.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24508011": {
+    "has_parking_garage": true,
+    "parking_evidence": "Yhtiön vieressä on pysäköintihalli josta voi vuokrata autopaikan.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24507015": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24506926": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24367944": {
+    "has_parking_garage": true,
+    "parking_evidence": "Omalla autolla liikkuvilla on mahdollisuus vuokrata autohallipaikka kohteesta.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24390452": {
+    "has_parking_garage": true,
+    "parking_evidence": "Omalla autolla liikkuvilla on mahdollisuus vuokrata autohallipaikka kohteesta.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24506754": {
+    "has_parking_garage": true,
+    "parking_evidence": "Autohallipaikka vuokrattavissa 80 €/kk.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24451063": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24506550": {
+    "has_parking_garage": true,
+    "parking_evidence": "Pihakannen alla olevassa paikoitushallissa on yhteensä 25 autopaikkaa, pihalla maantasossa neljä autopaikkaa.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24491776": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "23323408": {
+    "has_parking_garage": true,
+    "parking_evidence": "Pysäköintipaikat sijaitsevat viereisessä parkkihallissa.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24319941": {
+    "has_parking_garage": true,
+    "parking_evidence": "Yhtiön autopaikat sijaitsevat erillisessä, osin maanalaisessa pysäköintirakennuksessa.",
+    "has_ev_charging": true,
+    "ev_evidence": "Vuokrattavissa myös sähköautonlatauspaikka."
+  },
+  "24494736": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24505200": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24395591": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24473509": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24505126": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24430975": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24499252": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24504178": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24293505": {
+    "has_parking_garage": true,
+    "parking_evidence": "Autoileva voi vuokrata taloyhtiöstä käyttöönsä autohallipaikan.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24284170": {
+    "has_parking_garage": true,
+    "parking_evidence": "Yhtiössä myös autohalli, jonne kulku suoraan hissillä.",
+    "has_ev_charging": true,
+    "ev_evidence": "Autohallissa on kaksi sähköauton latauspaikkaa."
+  },
+  "24503811": {
+    "has_parking_garage": true,
+    "parking_evidence": "Juli Espoon Liinaharjan asukkaat voivat vuokrata parkkipaikan kiinteistön pihalta tai erillisestä pysäköintihallista.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24503765": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": true,
+    "ev_evidence": "Pysäköintimahdollisuuksia on hyvin, ja autopaikka sähköauton latausmahdollisuudella on saatavilla erikseen."
+  },
+  "24388056": {
+    "has_parking_garage": true,
+    "parking_evidence": "Autoilevat asukkaat voivat vuokrata itselleen autopaikan autohallista.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24503328": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24503004": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24502793": {
+    "has_parking_garage": true,
+    "parking_evidence": "Vuokrasopimus sisältää yhden ilmaisen hallipaikan autolle Runoratsun Pysäköintihallista Anna Sahlsteninkatu 11 (arvo 75 € sis. alv/kk) kuuden (6) kuukauden ajalle, kun vuokrasopimus on tehty 22.1.-30.6.2026.",
+    "has_ev_charging": true,
+    "ev_evidence": "Lisäksi sähköauton latauksesta hallissa maksetaan normaali 10 €/kk suuruinen maksu sekä asukkaan käyttämä lataussähkö, molemmat myös ensimmäisten kuuden kuukauden osalta."
+  },
+  "24502649": {
+    "has_parking_garage": true,
+    "parking_evidence": "Asunnon vuokrahintaan sisältyy autohallipaikka, jossa auton sähkölatausmahdollisuus.",
+    "has_ev_charging": true,
+    "ev_evidence": "Asunnon vuokrahintaan sisältyy autohallipaikka, jossa auton sähkölatausmahdollisuus."
+  },
+  "24308450": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24502607": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24427481": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24502420": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24502369": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24322672": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24482264": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24502136": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24502080": {
+    "has_parking_garage": true,
+    "parking_evidence": "Autopaikat sijaitsevat pihakannen alla kylmässä pysäköintilaitoksessa.",
+    "has_ev_charging": true,
+    "ev_evidence": "Autopaikat pihakannen alla, osa varustettu sähköauton latauspisteillä."
+  },
+  "24501365": {
+    "has_parking_garage": true,
+    "parking_evidence": "Talon asukkaille on tarjolla 44 autohallipaikkaa pihapiirin parkkihallissa sekä kaksi LE-pysäköintipaikkaa sisäpihalla.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "23825117": {
+    "has_parking_garage": true,
+    "parking_evidence": "Autotalleja ja pihapaikkoja vuokrattavissa.",
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24500835": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  },
+  "24500709": {
+    "has_parking_garage": true,
+    "parking_evidence": "Parkkitalossa autopaikka 50 €/kk, sähköauton latauspaikka 70 €/kk.",
+    "has_ev_charging": true,
+    "ev_evidence": "Parkkitalossa autopaikka 50 €/kk, sähköauton latauspaikka 70 €/kk."
+  },
+  "24500383": {
+    "has_parking_garage": true,
+    "parking_evidence": "Autoilijoille löytyy yhteensä 38 pysäköintipaikkaa, jotka sijaitsevat parkkihallissa.",
+    "has_ev_charging": true,
+    "ev_evidence": "Pysäköintipaikoista kuusi soveltuu sähköauton lataukseen."
+  },
+  "24500379": {
+    "has_parking_garage": false,
+    "parking_evidence": null,
+    "has_ev_charging": false,
+    "ev_evidence": null
+  }
+}
