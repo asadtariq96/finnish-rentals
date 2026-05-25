@@ -167,6 +167,38 @@ Captured 2026-05-25 from Espoo searches with default filters
 Useful for diffing future scrapes against today's data, or for unit-testing
 regex changes against a frozen ground truth.
 
+## TODO / future improvements
+
+Ideas worth picking up next, roughly in order of payoff per effort:
+
+### Easy wins
+- [ ] **Make `rentals` a real CLI command.** Add `pyproject.toml` with a `[project.scripts] rentals = "rentals:main"` entry; `pipx install .` makes `rentals matches` work from anywhere.
+- [ ] **`--year-min` filter.** Vuokraovi search already supports `yearMin` in the payload; expose it in the CLI. (Removing it is why the unified search went from 80 → 253 listings on Vuokraovi.)
+- [ ] **`--city` flag.** Both APIs accept other Finnish cities (Helsinki, Tampere, Vantaa, Turku). Right now `Espoo` (`FI_UUSIMAA_ESPOO`, oikotie `[39,6,"Espoo"]`) is hardcoded. Build a small lookup table.
+- [ ] **CSV export.** `--csv` next to `--json` for spreadsheet workflows.
+- [ ] **Sort by €/m².** Right now sort is by rent ascending only; price-per-sqm is more honest for comparing different sizes.
+- [ ] **Drop the data scattered in `~/Developer/`** — the canonical copies live in `data/` now.
+
+### Medium
+- [ ] **Add etuovi.com.** Third major site, very similar shape. Same playbook applies (open browser-harness, capture XHR, find auth in `<meta>` or JS bundle).
+- [ ] **Smarter dedup across stairwells.** Right now `(street, house, stair)` keeps `Karakalliontie 8 A` distinct from `Karakalliontie 8 D`. Sometimes Vuokraovi omits the stairwell letter — those slip through dedup. Optionally collapse by `(street, house)` with a `--collapse-stairwells` flag, showing rent range.
+- [ ] **Watch mode.** `rentals watch` polls every N minutes; diffs against last snapshot; alerts (Slack/email/desktop notification) when a new listing matches the filter. Use the existing snapshot format in `data/` as the diff baseline.
+- [ ] **More feature filters.** The free-text Finnish corpus is rich — easy extensions for the same regex-then-LLM pattern: sauna in unit (`oma sauna`), dishwasher (`astianpesukone`), balcony/loggia (`parveke`, `terassi`), pet-friendly (`lemmikit sallittu`).
+- [ ] **Regression test for the regex.** `data/*_llm_*.json` is ground-truth — wire it into a `pytest` that re-runs `has_parking_garage`/`has_ev_charging` on every snapshot text and fails if a verdict flips. Stops future regex changes from silently regressing.
+- [ ] **Pull listing photos.** Both detail APIs include image URLs; download the top 3 per shortlisted unit for offline browsing.
+
+### Bigger
+- [ ] **Geocoding-aware filter.** Both APIs return `latitude/longitude`. Filter by distance to a point (workplace, daycare, metro stop). Use the `Haversine` formula; no dep needed.
+- [ ] **HTML report.** Auto-generate a single-file HTML page with the shortlisted units, sorted, with photos and a map (Leaflet + OSM tiles). Open in browser after each run.
+- [ ] **Token-rotation robustness for oikotie.** Right now the refresh on 401 scrapes `/vuokra-asunnot` HTML to re-read meta tags. If oikotie ever rate-limits the HTML page or moves the meta, this breaks. Worth wrapping in a clearer error and considering a backoff.
+- [ ] **English-text handling.** Oikotie listings sometimes have English-only descriptions (e.g. `23692867`). The current regex covers a couple of phrases (`parking space ... elevator`) but the bulk is Finnish-only. If English listings become common, broaden the EV/parking patterns symmetrically.
+- [ ] **Saved-search profiles.** A `~/.finnish-rentals.toml` with named search profiles (`work`, `family`, `cheap`) so `rentals matches --profile work` replays a saved filter set.
+
+### Maintenance gotchas to remember
+- Vuokraovi's API has been stable; oikotie's `OTA-token` rotates per session — auto-refresh handles it but watch for layout changes on the landing page.
+- Oikotie's API silently ignores the `pagination=N` param (that's only for URL routing on the web app); always use `offset=N`.
+- Finnish noun inflection (`-os` → `-okse-`, `-us` → `-ukse-`) is the main source of regex bugs. Always anchor on stems, never on nominatives.
+
 ## License
 
 MIT — do whatever; no warranty. Personal scraper for personal use; mind the
