@@ -26,6 +26,38 @@ rentals.py          unified CLI — searches both, filters, dedupes by building
 data/               point-in-time snapshots from 2026-05-25 (full text + LLM verdicts)
 ```
 
+## How it works
+
+```mermaid
+flowchart LR
+  V["vuokraovi.com<br/>search JSON"] --> VC["vuokraovi.py"]
+  O["asunnot.oikotie.fi<br/>GraphQL, self-refreshing token"] --> OC["oikotie.py"]
+  VC --> N["one listing shape<br/>rent, m2, rooms, district,<br/>address, full Finnish text"]
+  OC --> N
+  N --> F["feature filter<br/>parking garage, EV charging"]
+  F --> D["dedupe<br/>street + number + stairwell"]
+  D --> T["table or JSON"]
+```
+
+Neither client needs an API key. Vuokraovi answers plain JSON on its public search path. Oikotie
+is GraphQL and mints a short-lived token that `oikotie.py` refreshes itself when a call comes back
+unauthorised, which is why a long crawl does not die halfway through.
+
+The feature filter is the interesting part. Neither site has a structured field for "parking
+garage" or "EV charging", so the only place that information exists is the free-text Finnish
+description. `finnish_rental.py` holds the patterns, and they were checked against roughly 470
+real Espoo listings rather than written from a dictionary. Finnish compounds are the reason: the
+word for a garage space can arrive glued to a case ending, and a naive substring match both misses
+those and fires on "no parking" phrasing.
+
+Dedupe exists because the same building is routinely listed by three or four landlords across both
+sites at different rents. The key is the street from the address, lowercased, plus the house number
+and the stairwell letter. When a building collides, the cheaper rent wins and the row records
+where else it was seen.
+
+Everything is stdlib. No pip install, no virtualenv, no requests, no pandas. The whole point is
+that you can copy the directory to any machine with a Python 3 and run it.
+
 ## CLI
 
 ### `matches` — the main command
