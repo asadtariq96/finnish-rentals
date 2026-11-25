@@ -3,3 +3,7 @@ __pycache__/
 .venv/
 .DS_Store
 *.swp
+web-app/appenv/
+web-app/listing_page.html
+web-app/details.json
+web-app/detail_gq3449.json

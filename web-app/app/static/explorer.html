@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vuokraovi — live search</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<style>
+  :root{
+    --bg:#0f1115; --panel:#171a21; --panel2:#1e222b; --line:#2a2f3a;
+    --txt:#e6e9ef; --muted:#8b93a3; --accent:#4f8cff;
+    --imm:#22c55e; --vac:#f59e0b; --agr:#8b5cf6;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--txt)}
+  header{padding:12px 20px;background:var(--panel);border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+  header h1{font-size:17px;margin:0;font-weight:650}
+  header .sub{color:var(--muted);font-size:12.5px}
+  .layout{display:grid;grid-template-columns:280px 1fr;min-height:calc(100vh - 53px)}
+  aside{padding:14px;background:var(--panel);border-right:1px solid var(--line);overflow-y:auto;max-height:calc(100vh - 53px);position:sticky;top:0}
+  main{padding:16px 20px;overflow:auto}
+  .fgroup{margin-bottom:13px}
+  .fgroup>label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;font-weight:600}
+  input[type=text],input[type=number],select{width:100%;padding:7px 9px;background:var(--panel2);border:1px solid var(--line);border-radius:6px;color:var(--txt);font-size:13px}
+  input:focus,select:focus{outline:none;border-color:var(--accent)}
+  .range{display:flex;gap:8px;align-items:center}
+  .range input{width:100%}
+  .range span{color:var(--muted);font-size:12px}
+  .checks{display:flex;flex-direction:column;gap:3px;max-height:150px;overflow:auto}
+  .checks label{display:flex;align-items:center;gap:7px;font-size:13px;cursor:pointer;padding:1px 0}
+  .checks input{accent-color:var(--accent)}
+  .chkcount{color:var(--muted);font-size:11.5px;margin-left:auto}
+  .btn{padding:8px 12px;background:var(--accent);border:none;border-radius:6px;color:#fff;cursor:pointer;font-size:13px;font-weight:600}
+  .btn.ghost{background:var(--panel2);border:1px solid var(--line);color:var(--txt);font-weight:400}
+  .btn.ghost:hover{border-color:var(--accent)}
+  .btn:disabled{opacity:.5;cursor:default}
+  hr{border:none;border-top:1px solid var(--line);margin:14px 0}
+  .statusline{margin:0 0 8px;font-size:12.5px}
+  #status{color:var(--accent)}
+  #matchline{color:var(--muted)}
+  #mapwrap{border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:14px;background:#14161b}
+  #map{height:360px;width:100%;background:#14161b}
+  #divider{height:10px;background:var(--panel2);border-top:1px solid var(--line);cursor:row-resize;display:flex;align-items:center;justify-content:center;user-select:none;color:var(--muted);font-size:10px;letter-spacing:3px}
+  #divider:hover{background:var(--line);color:var(--txt)}
+  #divider span{pointer-events:none}
+  .tblwrap{max-height:calc(100vh - 500px);min-height:220px;overflow:auto;border-radius:8px;border:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;background:var(--panel);font-size:13px}
+  thead{position:sticky;top:0;z-index:2}
+  thead th{background:var(--panel2);text-align:left;padding:8px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);cursor:pointer;user-select:none;white-space:nowrap}
+  thead th:hover{color:var(--txt)}
+  thead th .arrow{color:var(--accent)}
+  tbody td{padding:6px 10px;border-top:1px solid var(--line);vertical-align:middle}
+  tbody tr:hover{background:var(--panel2)}
+  tbody tr{cursor:pointer}
+  .thumb{width:60px;height:45px;object-fit:cover;border-radius:5px;background:#000;display:block}
+  .rent{font-weight:650;white-space:nowrap}
+  .tag{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap}
+  .tag.imm{background:rgba(34,197,94,.15);color:var(--imm)}
+  .tag.vac{background:rgba(245,158,11,.15);color:var(--vac)}
+  .tag.agr{background:rgba(139,92,246,.15);color:var(--agr)}
+  .tag.newb{background:rgba(79,140,255,.15);color:var(--accent)}
+  .tag.pk{background:rgba(34,197,94,.12);color:#6ee7a0}
+  .tag.pkno{background:rgba(248,113,113,.12);color:#f87171}
+  .muted{color:var(--muted)}
+  .empty{padding:30px;text-align:center;color:var(--muted)}
+  .loading{padding:30px;text-align:center;color:var(--accent)}
+  .pager{display:flex;gap:10px;align-items:center;justify-content:flex-end;padding:8px 10px;background:var(--panel);border:1px solid var(--line);border-top:none;border-radius:0 0 8px 8px;font-size:12.5px;color:var(--muted)}
+  .pager button{padding:4px 12px;font-size:12.5px}
+  .leaflet-popup-content-wrapper{background:var(--panel2);color:var(--txt);border:1px solid var(--line)}
+  .leaflet-popup-content{margin:10px 12px}
+  .leaflet-popup-tip{background:var(--panel2)}
+  a{color:var(--accent);text-decoration:none}
+  .cluster-any{background:rgba(79,140,255,.85)}
+</style>
+</head>
+<body>
+<header>
+  <h1>Vuokraovi · Live search</h1>
+  <span class="sub" id="locLabel"></span>
+  <span class="sub" id="status"></span>
+</header>
+<div class="layout">
+<aside>
+  <div class="fgroup">
+    <label>Municipality</label>
+    <select id="muni"></select>
+  </div>
+  <div class="fgroup">
+    <label>Free text <span class="muted">(live keyword search)</span></label>
+    <input type="text" id="freeText" placeholder="e.g. sauna, Otaniemi…" autocomplete="off">
+  </div>
+  <div class="fgroup">
+    <label>Rent €/month</label>
+    <div class="range"><input type="number" id="rentMin" placeholder="min" min="0"><span>–</span><input type="number" id="rentMax" placeholder="max" min="0"></div>
+  </div>
+  <div class="fgroup">
+    <label>Area m²</label>
+    <div class="range"><input type="number" id="areaMin" placeholder="min" min="0"><span>–</span><input type="number" id="areaMax" placeholder="max" min="0"></div>
+  </div>
+  <div class="fgroup">
+    <label>Rooms</label>
+    <div class="checks" id="rooms"></div>
+  </div>
+  <div class="fgroup">
+    <label>Building type</label>
+    <div class="checks" id="ptype"></div>
+  </div>
+  <div class="fgroup">
+    <label>Year built</label>
+    <div class="range"><input type="number" id="yearMin" placeholder="min" min="1900"><span>–</span><input type="number" id="yearMax" placeholder="max" min="1900"></div>
+  </div>
+  <div class="fgroup">
+    <label>€/m²</label>
+    <div class="range"><input type="number" id="sqmMin" placeholder="min" min="0"><span>–</span><input type="number" id="sqmMax" placeholder="max" min="0"></div>
+  </div>
+  <div class="fgroup">
+    <label>Floor / building height</label>
+    <div class="range"><input type="number" id="floorMin" placeholder="floor ≥" min="0"><input type="number" id="floorMax" placeholder="floor ≤" min="0"><span style="white-space:nowrap">bldg ≤</span><input type="number" id="bfloorMax" placeholder="floors" min="1"></div>
+  </div>
+  <div class="fgroup">
+    <label>Extras</label>
+    <div class="checks" id="extras">
+      <label><input type="checkbox" id="hasVideo"> has video</label>
+      <label><input type="checkbox" id="hasShowing"> has upcoming viewing</label>
+      <label><input type="checkbox" id="privOnly"> private landlord</label>
+    </div>
+  </div>
+  <div class="fgroup">
+    <label>Parking <span class="muted">(your verified data)</span></label>
+    <div class="checks" id="parking">
+      <label><input type="checkbox" id="pHall"> has hall (autohalli)</label>
+      <label><input type="checkbox" id="pUnderground"> underground hall</label>
+      <label><input type="checkbox" id="pHeated"> heated / semi-heated</label>
+      <label><input type="checkbox" id="pEv"> EV charging</label>
+      <label><input type="checkbox" id="pPlug"> engine-heater plug</label>
+    </div>
+  </div>
+  <div class="fgroup">
+    <label>District</label>
+    <select id="district" multiple size="7"></select>
+  </div>
+  <div class="fgroup">
+    <label>Availability</label>
+    <div class="checks" id="avail"></div>
+  </div>
+  <div class="fgroup">
+    <label>Landlord</label>
+    <select id="landlord" multiple size="5"></select>
+  </div>
+  <div class="checks" style="margin-bottom:10px"><label><input type="checkbox" id="newb"> only new builds</label></div>
+  <button class="btn ghost" id="refresh">Refresh municipality</button>
+</aside>
+<main>
+  <p class="statusline" id="matchline"></p>
+  <div id="mapwrap">
+    <div id="map"></div>
+    <div id="divider"><span>⋮</span></div>
+  </div>
+  <div class="tblwrap">
+    <table>
+      <thead><tr id="thead"></tr></thead>
+      <tbody id="tbody"><tr><td colspan="12" class="loading">Loading…</td></tr></tbody>
+    </table>
+    <div class="pager">
+      <button class="btn ghost" id="prev">← Prev</button>
+      <span id="pageinfo"></span>
+      <button class="btn ghost" id="next">Next →</button>
+    </div>
+  </div>
+</main>
+</div>
+<script>
+const IMG = a => a.mainImageUri ? ('https:' + a.mainImageUri.replace('{imageParameters}','400x300,q85,f=webp')) : '';
+const URL = a => 'https://www.vuokraovi.com/kohde/' + a.friendlyId;
+const district = a => { let s=(a.addressLine2||'').trim().replace(/[, ]*ESPOO$/i,'').replace(/[, ]*Espoo$/i,'').trim(); return s||'(unknown)'; };
+const landlord = a => (a.office && a.office.name) || a.privateLessorName || 'Yksityinen';
+const avail = a => (a.rentalAvailability && a.rentalAvailability.type) || 'ON_AGREEMENT';
+const sqm = a => a.area ? Math.round(a.searchRent/a.area*10)/10 : null;
+const fmt = n => n==null ? '–' : n.toLocaleString('fi-FI',{maximumFractionDigits:1});
+const eur = n => n==null ? '–' : Math.round(n).toLocaleString('fi-FI') + ' €';
+const parkText = p => {
+  if(!p || !p.parking_hall_exists) return null;
+  const b=[];
+  b.push(p.parking_hall_exists==='yes' ? (p.hall_underground==='yes' ? 'autohalli (maanalainen)' : 'autohalli') : 'ei autohallia');
+  if(p.heated_status==='heated') b.push('lämmin');
+  else if(p.heated_status==='semi_heated') b.push('puolilämmin');
+  else if(p.heated_status==='cold') b.push('kylmä');
+  if(p.ev_charging==='yes') b.push('EV-lataus');
+  else if(p.ev_charging==='partial') b.push('EV osin');
+  if(p.engine_heater_plug==='yes') b.push('lämpötolppa');
+  if(p.parking_operator && p.parking_operator!=='unverified') b.push(p.parking_operator);
+  return b.join(' · ');
+};
+const parkBadges = p => {
+  if(!p) return '<span class="muted">–</span>';
+  const b=[];
+  if(p.parking_hall_exists==='yes') b.push(p.hall_underground==='yes' ? '<span class="tag pk" title="autohalli, maanalainen">hall ↓</span>' : '<span class="tag pk" title="autohalli">hall</span>');
+  else if(p.parking_hall_exists==='no') b.push('<span class="tag pkno" title="ei autohallia (verified)">no hall</span>');
+  if(p.heated_status==='heated') b.push('<span class="tag pk">lämmin</span>');
+  else if(p.heated_status==='semi_heated') b.push('<span class="tag pk">puolilämmin</span>');
+  else if(p.heated_status==='cold') b.push('<span class="tag pk">kylmä</span>');
+  if(p.ev_charging==='yes') b.push('<span class="tag pk">EV</span>');
+  else if(p.ev_charging==='partial') b.push('<span class="tag pk">EV osin</span>');
+  if(p.engine_heater_plug==='yes') b.push('<span class="tag pk">lämpötolppa</span>');
+  return b.join(' ') || '<span class="muted">–</span>';
+};
+const roomLabel = {ONE_ROOM:'1 room',TWO_ROOMS:'2 rooms',THREE_ROOMS:'3 rooms',FOUR_ROOMS:'4 rooms',FIVE_ROOMS:'5 rooms',MORE_THAN_FIVE_ROOMS:'5+ rooms'};
+const availLabel = {IMMEDIATELY:'Immediately',VACANCY:'Vacancy',ON_AGREEMENT:'On agmt'};
+const availColor = {IMMEDIATELY:'#22c55e',VACANCY:'#f59e0b',ON_AGREEMENT:'#8b5cf6'};
+const ROOMS = ['ONE_ROOM','TWO_ROOMS','THREE_ROOMS','FOUR_ROOMS','FIVE_ROOMS','MORE_THAN_FIVE_ROOMS'];
+const PTYPE_LABEL = {APARTMENT_HOUSE:'Kerrostalo',BALCONY_ACCESS_BLOCK:'Luhtitalo',ROW_HOUSE:'Rivitalo',SEMI_DETACHED_HOUSE:'Paritalo',DETACHED_HOUSE:'Omakotitalo',SEPARATE_HOUSE:'Erillistalo'};
+const PAGE_SIZE = 100;
+const sleep = ms => new Promise(r=>setTimeout(r,ms));
+
+let allRows = [], lastTotal = 0, mode = 'all';
+let sortIdx = 7, sortDir = 'asc';
+let page = 0;
+const state = {rentMin:null,rentMax:null,areaMin:null,areaMax:null,rooms:new Set(),ptype:new Set(),
+  yearMin:null,yearMax:null,sqmMin:null,sqmMax:null,floorMin:null,floorMax:null,bfloorMax:null,
+  district:new Set(),avail:new Set(),landlord:new Set(),newb:false,
+  hasVideo:false,hasShowing:false,privOnly:false,
+  pHall:false,pUnderground:false,pHeated:false,pEv:false,pPlug:false};
+const num = id => { const v=document.getElementById(id).value; return v===''?null:parseFloat(v); };
+
+document.querySelectorAll('#rooms,#avail').forEach(el=>{ /* built dynamically */ });
+
+function buildRoomChecks(){
+  document.getElementById('rooms').innerHTML = ROOMS.map(r=>`<label><input type="checkbox" value="${r}">${roomLabel[r]}</label>`).join('');
+}
+const mapRows = anns => anns.map(a=>Object.assign({}, a, {_district:district(a),_landlord:landlord(a),_avail:avail(a),_sqm:sqm(a),_parking:a.parking||null}));
+
+const $ = id => document.getElementById(id);
+const setStatus = (m, cls) => { const s=$('status'); s.textContent=m; s.style.color = cls==='err'? '#f87171' : 'var(--accent)'; };
+
+// ---- data loading (prefetched full municipality vs live text search) ----
+function rebuildClientFilters(){
+  const cd={}, ca={}, cl={}, cp={};
+  allRows.forEach(r=>{ cd[r._district]=(cd[r._district]||0)+1; ca[r._avail]=(ca[r._avail]||0)+1; cl[r._landlord]=(cl[r._landlord]||0)+1; cp[r.propertySubtype]=(cp[r.propertySubtype]||0)+1; });
+  $('ptype').innerHTML = Object.keys(cp).sort((a,b)=>cp[b]-cp[a]).map(k=>`<label><input type="checkbox" value="${k}" checked>${PTYPE_LABEL[k]||k}<span class="chkcount">${cp[k]}</span></label>`).join('') || '<span class="muted">—</span>';
+  $('district').innerHTML = Object.keys(cd).sort((a,b)=>cd[b]-cd[a]).map(k=>`<option value="${k.replace(/"/g,'&quot;')}">${k} (${cd[k]})</option>`).join('');
+  document.querySelectorAll('#district option').forEach(o=>o.selected=true);
+  $('avail').innerHTML = ['IMMEDIATELY','VACANCY','ON_AGREEMENT'].filter(k=>ca[k]).
+    map(k=>`<label><input type="checkbox" value="${k}" checked>${availLabel[k]}<span class="chkcount">${ca[k]}</span></label>`).join('') || '<span class="muted">—</span>';
+  $('landlord').innerHTML = Object.keys(cl).sort((a,b)=>cl[b]-cl[a]).map(k=>`<option value="${k.replace(/"/g,'&quot;')}">${k} (${cl[k]})</option>`).join('');
+  document.querySelectorAll('#landlord option').forEach(o=>o.selected=true);
+}
+
+async function waitForPrefetch(code, label){
+  while(true){
+    const s = await (await fetch('/api/municipality/'+code+'/status')).json();
+    const done = s.count ? s.fetched : 0;
+    if(!s.prefetching){
+      if(!s.cached){ setStatus('No data yet for '+label, 'err'); }
+      return;
+    }
+    setStatus('Prefetching '+label+'… '+done+'/'+(s.count||'?'));
+    await sleep(1200);
+  }
+}
+
+async function loadMunicipality(code){
+  const label = $('muni').selectedOptions[0]?.text||code;
+  setStatus('Loading '+label+'…');
+  try{
+    const r = await (await fetch('/api/municipality/'+code)).json();
+    if(r.status==='prefetching' || !r.count){
+      await waitForPrefetch(code, label);
+    }
+    const full = await (await fetch('/api/municipality/'+code)).json();
+    if(!full.count){ setStatus('No listings for '+label, 'err'); allRows=[]; lastTotal=0; mode='all'; page=0; rebuildClientFilters(); render(); return; }
+    mode='all'; allRows=mapRows(full.announcements); lastTotal=full.count; page=0;
+    setStatus((full.refreshing?'refreshed ':'')+label+': '+full.count+' listings');
+    rebuildClientFilters();
+    render();
+  }catch(e){ setStatus('Load failed: '+(e&&e.message||e), 'err'); }
+}
+
+async function doTextSearch(q){
+  const code = $('muni').value, label = $('muni').selectedOptions[0]?.text||'';
+  setStatus('Searching "'+q+'"…');
+  try{
+    const body = { location:{code, shortName:label, districts:[]}, freeText:q,
+      rentMin:num('rentMin'), rentMax:num('rentMax'), sizeMin:num('areaMin'), sizeMax:num('areaMax'),
+      roomCounts:[...document.querySelectorAll('#rooms input:checked')].map(i=>i.value), maxResults:200 };
+    const res = await fetch('/api/search',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+    const data = await res.json();
+    if(!res.ok) throw new Error((data&&data.error)||'search failed');
+    mode='text'; allRows=mapRows(data.announcements||[]); lastTotal=data.countOfAllResults||0; page=0;
+    setStatus('Text search "'+q+'": '+lastTotal+' matches');
+    rebuildClientFilters();
+    render();
+  }catch(e){ setStatus('Search failed: '+(e&&e.message||e), 'err'); }
+}
+
+// ---- client-side filtering + sorting (instant, no backend) ----
+function syncState(){
+  state.rentMin=num('rentMin'); state.rentMax=num('rentMax');
+  state.areaMin=num('areaMin'); state.areaMax=num('areaMax');
+  state.yearMin=num('yearMin'); state.yearMax=num('yearMax');
+  state.sqmMin=num('sqmMin'); state.sqmMax=num('sqmMax');
+  state.floorMin=num('floorMin'); state.floorMax=num('floorMax'); state.bfloorMax=num('bfloorMax');
+  state.rooms=new Set([...document.querySelectorAll('#rooms input:checked')].map(i=>i.value));
+  state.ptype=new Set([...document.querySelectorAll('#ptype input:checked')].map(i=>i.value));
+  state.district=new Set([...document.getElementById('district').selectedOptions].map(o=>o.value));
+  state.avail=new Set([...document.querySelectorAll('#avail input:checked')].map(i=>i.value));
+  state.landlord=new Set([...document.getElementById('landlord').selectedOptions].map(o=>o.value));
+  state.newb=document.getElementById('newb').checked;
+  state.hasVideo=document.getElementById('hasVideo').checked;
+  state.hasShowing=document.getElementById('hasShowing').checked;
+  state.privOnly=document.getElementById('privOnly').checked;
+  state.pHall=document.getElementById('pHall').checked;
+  state.pUnderground=document.getElementById('pUnderground').checked;
+  state.pHeated=document.getElementById('pHeated').checked;
+  state.pEv=document.getElementById('pEv').checked;
+  state.pPlug=document.getElementById('pPlug').checked;
+}
+const cols = [
+  {k:'_img',t:'',val:null},
+  {k:'location',t:'Address',val:r=>(r.location||'').toLowerCase()},
+  {k:'_district',t:'District',val:r=>(r._district||'').toLowerCase()},
+  {k:'roomStructure',t:'Rooms',val:r=>(r.roomStructure||'').toLowerCase()},
+  {k:'area',t:'m²',val:r=>r.area,num:1},
+  {k:'constructionFinishedYear',t:'Year',val:r=>r.constructionFinishedYear||-1,num:1},
+  {k:'floorLevel',t:'Floor',val:r=>r.floorLevel||-1,num:1},
+  {k:'searchRent',t:'Rent',val:r=>r.searchRent,num:1},
+  {k:'_sqm',t:'€/m²',val:r=>r._sqm==null?-Infinity:r._sqm,num:1},
+  {k:'_avail',t:'Avail',val:r=>(availLabel[r._avail]||'').toLowerCase()},
+  {k:'_landlord',t:'Landlord',val:r=>(r._landlord||'').toLowerCase()},
+  {k:'_parking',t:'Parking',val:r=>r._parking?1:0,num:1},
+];
+function rowPasses(r, exclude){
+  if(!exclude.has('rent') && state.rentMin!=null && r.searchRent<state.rentMin) return false;
+  if(!exclude.has('rent') && state.rentMax!=null && r.searchRent>state.rentMax) return false;
+  if(!exclude.has('area') && state.areaMin!=null && r.area<state.areaMin) return false;
+  if(!exclude.has('area') && state.areaMax!=null && r.area>state.areaMax) return false;
+  if(!exclude.has('sqm') && state.sqmMin!=null && r._sqm!=null && r._sqm<state.sqmMin) return false;
+  if(!exclude.has('sqm') && state.sqmMax!=null && r._sqm!=null && r._sqm>state.sqmMax) return false;
+  if(!exclude.has('year') && state.yearMin!=null && r.constructionFinishedYear!=null && r.constructionFinishedYear<state.yearMin) return false;
+  if(!exclude.has('year') && state.yearMax!=null && r.constructionFinishedYear!=null && r.constructionFinishedYear>state.yearMax) return false;
+  if(!exclude.has('floor') && state.floorMin!=null && r.floorLevel!=null && r.floorLevel<state.floorMin) return false;
+  if(!exclude.has('floor') && state.floorMax!=null && r.floorLevel!=null && r.floorLevel>state.floorMax) return false;
+  if(!exclude.has('bfloor') && state.bfloorMax!=null && r.housingCompanyFloorCount!=null && r.housingCompanyFloorCount>state.bfloorMax) return false;
+  if(!exclude.has('rooms') && state.rooms.size && !state.rooms.has(r.roomCount)) return false;
+  if(!exclude.has('ptype') && state.ptype.size && !state.ptype.has(r.propertySubtype)) return false;
+  if(!exclude.has('district') && state.district.size && !state.district.has(r._district)) return false;
+  if(!exclude.has('avail') && state.avail.size && !state.avail.has(r._avail)) return false;
+  if(!exclude.has('landlord') && state.landlord.size && !state.landlord.has(r._landlord)) return false;
+  if(!exclude.has('newb') && state.newb && !r.newBuilding) return false;
+  if(!exclude.has('hasVideo') && state.hasVideo && !r.hasVideo) return false;
+  if(!exclude.has('hasShowing') && state.hasShowing && !(r.nextShowings && r.nextShowings.length)) return false;
+  if(!exclude.has('privOnly') && state.privOnly && !r.privateLessorName) return false;
+  if(!exclude.has('pHall') && state.pHall && !(r._parking && r._parking.parking_hall_exists==='yes')) return false;
+  if(!exclude.has('pUnderground') && state.pUnderground && !(r._parking && r._parking.hall_underground==='yes')) return false;
+  if(!exclude.has('pHeated') && state.pHeated && !(r._parking && (r._parking.heated_status==='heated'||r._parking.heated_status==='semi_heated'))) return false;
+  if(!exclude.has('pEv') && state.pEv && !(r._parking && (r._parking.ev_charging==='yes'||r._parking.ev_charging==='partial'))) return false;
+  if(!exclude.has('pPlug') && state.pPlug && !(r._parking && r._parking.engine_heater_plug==='yes')) return false;
+  return true;
+}
+
+// cascading counts: each list's numbers reflect all filters EXCEPT its own,
+// so unchecking a value doesn't make it vanish and options stay toggleable.
+const DIM_FIELDS = [['ptype','propertySubtype'],['district','_district'],['avail','_avail'],['landlord','_landlord']];
+function cascadeCounts(){
+  DIM_FIELDS.forEach(([dim,field])=>{
+    const c={}, ex=new Set([dim]);
+    allRows.forEach(r=>{ if(rowPasses(r,ex)){ const v=r[field]; c[v]=(c[v]||0)+1; } });
+    if(dim==='ptype'||dim==='avail'){
+      document.querySelectorAll('#'+dim+' input').forEach(i=>{
+        const s=i.parentElement.querySelector('.chkcount'); if(s) s.textContent = c[i.value]!==undefined?c[i.value]:'';
+      });
+    }else{
+      document.querySelectorAll('#'+dim+' option').forEach(o=>{ if(!o.value) return;
+        o.textContent = o.value + ' (' + (c[o.value]!==undefined?c[o.value]:0) + ')'; });
+    }
+  });
+}
+
+function filtered(){
+  syncState();
+  let list = allRows.filter(r=>rowPasses(r, new Set()));
+  const c=cols[sortIdx];
+  if(c.val){ const d=sortDir==='asc'?1:-1;
+    list.sort((a,b)=>{ const va=c.val(a),vb=c.val(b);
+      return c.num ? (va-vb)*d : String(va).localeCompare(String(vb),'fi')*d; }); }
+  return list;
+}
+
+// ---- map (marker clustering for thousands of points) ----
+let map=null, cluster=null;
+function renderMap(list){
+  if(!map){ map=L.map('map').setView([60.205,24.66],11);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© OpenStreetMap'}).addTo(map);
+    cluster = L.markerClusterGroup().addTo(map);
+  }
+  cluster.clearLayers();
+  list.filter(r=>r.latitude&&r.longitude).forEach(r=>{
+    const m=L.circleMarker([r.latitude,r.longitude],{radius:6,color:'#0f1115',weight:1,fillColor:availColor[r._avail],fillOpacity:.85});
+    m.bindPopup(`<b>${r.location}</b><br>${r.roomStructure} · ${fmt(r.area)} m² · <b>${eur(r.searchRent)}</b><br>${availLabel[r._avail]}${r.rentalAvailability&&r.rentalAvailability.vacancyDate?' · '+r.rentalAvailability.vacancyDate:''}${r._parking?'<br><span class="muted">'+parkText(r._parking)+'</span>':''}<br><a href="${URL(r)}" target="_blank">open listing →</a>`);
+    cluster.addLayer(m);
+  });
+  if(list.length) map.fitBounds(cluster.getBounds().pad(0.1));
+}
+
+// ---- table (client-side pagination) ----
+function renderTable(list){
+  $('thead').innerHTML = cols.map((c,i)=>{ const a=i===sortIdx?(sortDir==='asc'?' ▲':' ▼'):'';
+    return `<th data-i="${i}">${c.t}<span class="arrow">${a}</span></th>`; }).join('');
+  const pages=Math.max(1,Math.ceil(list.length/PAGE_SIZE));
+  if(page>=pages) page=pages-1;
+  const slice=list.slice(page*PAGE_SIZE,page*PAGE_SIZE+PAGE_SIZE);
+  $('tbody').innerHTML = slice.length ? slice.map(r=>{
+    const tag=r._avail==='IMMEDIATELY'?'imm':r._avail==='VACANCY'?'vac':'agr';
+    const nb=r.newBuilding?' <span class="tag newb">new</span>':'';
+    return `<tr onclick="window.open('${URL(r)}','_blank')">
+      <td>${IMG(r)?`<img class="thumb" loading="lazy" src="${IMG(r)}">`:'<div class="thumb"></div>'}</td>
+      <td><b>${r.location}</b></td><td class="muted">${r._district}</td>
+      <td>${r.roomStructure}${nb}</td><td>${fmt(r.area)}</td><td>${r.constructionFinishedYear||'–'}</td><td>${r.floorLevel||'–'}</td>
+      <td class="rent">${eur(r.searchRent)}</td><td>${fmt(r._sqm)}</td>
+      <td><span class="tag ${tag}">${availLabel[r._avail]}</span></td><td class="muted">${r._landlord}</td><td>${parkBadges(r._parking)}</td></tr>`;
+  }).join('') : '<tr><td colspan="12" class="empty">No listings match the filters.</td></tr>';
+  const from = list.length? page*PAGE_SIZE+1 : 0, to = Math.min(list.length,(page+1)*PAGE_SIZE);
+  $('pageinfo').textContent = `${from}–${to} of ${list.length}`;
+  $('prev').disabled = page<=0; $('next').disabled = page>=pages-1;
+}
+$('prev').addEventListener('click',()=>{ if(page>0){page--; renderTable(filtered());} });
+$('next').addEventListener('click',()=>{ if(page<Math.ceil(filtered().length/PAGE_SIZE)-1){page++; renderTable(filtered());} });
+$('thead').addEventListener('click',e=>{ const th=e.target.closest('th'); if(!th) return;
+  const i=+th.dataset.i; if(i===0) return;
+  if(i===sortIdx) sortDir=sortDir==='asc'?'desc':'asc'; else { sortIdx=i; sortDir='asc'; }
+  page=0; render();
+});
+
+// ---- divider resize ----
+const mapEl=$('map'), divider=$('divider'); let dragging=false,startY=0,startH=0;
+divider.addEventListener('mousedown',e=>{ dragging=true; startY=e.clientY; startH=mapEl.offsetHeight;
+  e.preventDefault(); document.body.style.userSelect='none'; document.body.style.cursor='row-resize'; });
+window.addEventListener('mousemove',e=>{ if(!dragging) return;
+  const h=Math.min(Math.max(startH+(e.clientY-startY),140),window.innerHeight-430);
+  mapEl.style.height=h+'px'; if(map) map.invalidateSize(); });
+window.addEventListener('mouseup',()=>{ dragging=false; document.body.style.userSelect=''; document.body.style.cursor=''; });
+divider.addEventListener('dblclick',()=>{ mapEl.style.height='360px'; if(map) map.invalidateSize(); });
+
+// ---- render ----
+function render(){
+  const list=filtered();
+  renderMap(list);
+  renderTable(list);
+  $('matchline').textContent = `${list.length} shown of ${mode==='all' ? lastTotal+' total ('+allRows.length+' fetched)' : lastTotal+' text matches'}`;
+}
+function applyFilters(){ syncState(); cascadeCounts(); page=0; render(); }   // structural filter change -> refresh option counts + render
+
+// ---- wiring ----
+// structural filters: instant client-side (no backend)
+['rentMin','rentMax','areaMin','areaMax','yearMin','yearMax','sqmMin','sqmMax','floorMin','floorMax','bfloorMax'].forEach(id=>$(id).addEventListener('input',applyFilters));
+$('rooms').addEventListener('input',applyFilters);   // delegated for dynamic checkboxes
+$('ptype').addEventListener('input',applyFilters);
+$('avail').addEventListener('input',applyFilters);
+$('district').addEventListener('input',applyFilters);
+$('landlord').addEventListener('input',applyFilters);
+$('newb').addEventListener('change',applyFilters);
+$('hasVideo').addEventListener('change',applyFilters);
+$('hasShowing').addEventListener('change',applyFilters);
+$('privOnly').addEventListener('change',applyFilters);
+$('parking').addEventListener('input',applyFilters);
+
+// free text: debounced live search; clear reverts to full municipality
+let textTimer=null;
+$('freeText').addEventListener('input',()=>{
+  clearTimeout(textTimer);
+  textTimer=setTimeout(()=>{ const q=$('freeText').value.trim();
+    if(q) doTextSearch(q); else loadMunicipality($('muni').value); },450);
+});
+
+async function loadMunis(){
+  const r = await (await fetch('/api/municipalities')).json();
+  $('muni').innerHTML = r.map(m=>`<option value="${m.code}">${m.name}</option>`).join('');
+  const def = r.find(m=>m.code==='FI_UUSIMAA_ESPOO')||r[0];
+  $('muni').value = def?def.code:'';
+  $('locLabel').textContent = def?def.name:'';
+  loadMunicipality($('muni').value);
+}
+$('muni').addEventListener('change',()=>{ const o=$('muni').selectedOptions[0]; $('locLabel').textContent=o?o.text:''; $('freeText').value=''; loadMunicipality($('muni').value); });
+$('refresh').addEventListener('click',()=>{ loadMunicipality($('muni').value); });
+
+buildRoomChecks();
+loadMunis();
+</script>
+</body>
+</html>

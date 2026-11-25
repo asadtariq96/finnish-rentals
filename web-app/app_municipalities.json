@@ -1,0 +1,57 @@
+[
+ {
+  "name": "Helsinki",
+  "code": "FI_UUSIMAA_HELSINKI",
+  "districts": 200
+ },
+ {
+  "name": "Espoo",
+  "code": "FI_UUSIMAA_ESPOO",
+  "districts": 200
+ },
+ {
+  "name": "Vantaa",
+  "code": "FI_UUSIMAA_VANTAA",
+  "districts": 130
+ },
+ {
+  "name": "Tampere",
+  "code": "FI_PIRKANMAA_TAMPERE",
+  "districts": 187
+ },
+ {
+  "name": "Turku",
+  "code": "FI_VSUOMI_TURKU",
+  "districts": 200
+ },
+ {
+  "name": "Oulu",
+  "code": "FI_PPOHJANMAA_OULU",
+  "districts": 200
+ },
+ {
+  "name": "Jyväskylä",
+  "code": "FI_KSUOMI_JYVASKYLA",
+  "districts": 200
+ },
+ {
+  "name": "Lahti",
+  "code": "FI_PHAME_LAHTI",
+  "districts": 176
+ },
+ {
+  "name": "Pori",
+  "code": "FI_SATAKUNTA_PORI",
+  "districts": 200
+ },
+ {
+  "name": "Vaasa",
+  "code": "FI_POHJANMAA_VAASA",
+  "districts": 99
+ },
+ {
+  "name": "Rovaniemi",
+  "code": "FI_LAPPI_ROVANIEMI",
+  "districts": 171
+ }
+]
